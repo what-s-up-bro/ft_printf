@@ -6,11 +6,14 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:04:37 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/10 17:36:32 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/10 18:51:13 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libftprintf.h"
+
 int	ft_print_c(char c)
 {
-	return (write(1, &c, 1));
+	write(1, &c, 1);
+	return (1);
 }

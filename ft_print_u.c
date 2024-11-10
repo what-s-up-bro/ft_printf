@@ -6,11 +6,11 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:04:56 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/10 17:38:11 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/10 18:52:43 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libfcollector.h"
+#include "libftprintf.h"
 
 int	ft_print_u(unsigned int nb)
 {

@@ -6,11 +6,11 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:04:41 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/10 17:38:54 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/10 18:51:51 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libfcollector.h"
+#include "libftprintf.h"
 
 int	ft_print_d_i(int nb)
 {

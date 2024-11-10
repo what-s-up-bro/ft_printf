@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:04:59 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/10 18:26:08 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/10 18:53:17 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int	ft_print_x(int nb)
 {
 	int		i;
-	char	s[16];
+	char	*s;
 
 	i = 0;
-	s[16] = "0123456789abcdef";
+	s = "0123456789abcdef";
 	if (nb >= 16)
 		i += ft_print_x(nb / 16);
 	i += ft_print_c(s[nb % 16]);
