@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:53:38 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/10 17:41:48 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/10 18:30:31 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ static int	ft_make(char c, va_list args)
 		i += ft_print_x(va_arg(args, unsigned int));
 	else if (c == 'X')
 		i += ft_print_2(va_arg(args, unsigned int));
+	else if (c == 'p')
+		i += ft_print_p(va_arg(args, void *));
 	else if (c == '%')
 		i += ft_print_c('%');
 	return (i);

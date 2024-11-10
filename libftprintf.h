@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 08:55:11 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/10 17:43:15 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/10 18:31:47 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int		ft_print_d_i(int nb);
 int		ft_print_u(unsigned int nb);
 int		ft_print_2(int nb);
 int		ft_print_x(int nb);
-int		ft_printf(const char *form, ...);
+int		ft_my_printf(const char *form, ...);
+int		ft_print_p(void *ptr);
 char	ft_itoa(int n);
 
 #endif
