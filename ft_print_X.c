@@ -6,30 +6,30 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 11:42:45 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/10 11:45:02 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/10 17:40:29 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int ft_print_X(int nb)
+int	ft_print_2(int nb)
 {
-    int i;
-    char    s[16];
+	int		i;
+	char	s[16];
 
-    i = 0;
-    s[16] = "0123456789abcdef";
-    if (nb == 0)
-    {
-        write(1, "0", 1);
-        return (1);
-    }
-    if (nb >= 16)
-        i += ft_print_x(nb / 16);
-    if ((nb % 16) >= 'A' && (nb % 16) <= 'Z')
-        write(1, &s[(nb % 16) + 32], 1);
-    else
-        write(1, &s[nb % 16], 1);
-    i++;
-    return (i);
+	i = 0;
+	s[16] = "0123456789abcdef";
+	if (nb == 0)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
+	if (nb >= 16)
+		i += ft_print_2(nb / 16);
+	if ((nb % 16) >= 'A' && (nb % 16) <= 'Z')
+		write(1, &s[(nb % 16) + 32], 1);
+	else
+		write(1, &s[nb % 16], 1);
+	i++;
+	return (i);
 }
