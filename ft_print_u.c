@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:04:56 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/11 10:00:56 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:10:25 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,17 @@ int	ft_print_u(unsigned int nb)
 
 	i = 0;
 	str = ft_itoa1(nb);
-	if (str)
+	if (!str)
+		return (-1);
+	while (str[i])
 	{
-		while (str[i])
+		if (ft_print_c(str[i]) == -1)
 		{
-			ft_print_c(str[i]);
-			i++;
+			free (str);
+			return (-1);
 		}
-		free(str);
+		i++;
 	}
+	free(str);
 	return (i);
 }

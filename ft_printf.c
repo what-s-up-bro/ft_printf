@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:53:38 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/10 20:00:01 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:53:17 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,44 +18,59 @@ int	ft_make(char c, va_list args)
 
 	i = 0;
 	if (c == 'c')
-		i += ft_print_c(va_arg(args, int));
+		i = ft_print_c(va_arg(args, int));
 	else if (c == 's')
-		i += ft_print_s(va_arg(args, char *));
+		i = ft_print_s(va_arg(args, char *));
 	else if (c == 'd' || c == 'i')
-		i += ft_print_d_i(va_arg(args, int));
+		i = ft_print_d_i(va_arg(args, int));
 	else if (c == 'u')
-		i += ft_print_u(va_arg(args, unsigned int));
+		i = ft_print_u(va_arg(args, unsigned int));
 	else if (c == 'x')
-		i += ft_print_x(va_arg(args, unsigned int));
+		i = ft_print_x(va_arg(args, unsigned int));
 	else if (c == 'X')
-		i += ft_print_hex(va_arg(args, unsigned int));
+		i = ft_print_hex(va_arg(args, unsigned int));
 	else if (c == 'p')
-		i += ft_print_p(va_arg(args, void *));
+		i = ft_print_p(va_arg(args, void *));
 	else if (c == '%')
-		i += ft_print_c('%');
+		i = ft_print_c('%');
+	else
+		return (-1);
+	if (i == -1)
+		return (-1);
 	return (i);
+}
+
+void	ft_sity(int a[2])
+{
+	a[0] = 0;
+	a[1] = 0;
 }
 
 int	ft_printf(const char *form, ...)
 {
 	va_list	args;
-	int		i;
-	int		j;
+	int		a[2];
 
-	j = 0;
-	i = 0;
+	ft_sity(a);
 	va_start(args, form);
-	while (form[j])
+	if (write(1, 0, 0) == -1)
+		return (-1);
+	while (*form)
 	{
-		if (form[j] == '%' && form[j + 1])
+		if (*form == '%' && *(form + 1))
 		{
-			j++;
-			i += ft_make(form[j], args);
+			a[0] = ft_make(*(++form), args);
+			if (a[0] == -1)
+				return (va_end(args), -1);
+			a[1] += a[0];
 		}
 		else
-			i += ft_print_c(form[j]);
-		j++;
+		{
+			if (ft_print_c(*form) == -1)
+				return (va_end(args), -1);
+			a[1]++;
+		}
+		form++;
 	}
-	va_end(args);
-	return (i);
+	return (va_end(args), a[1]);
 }

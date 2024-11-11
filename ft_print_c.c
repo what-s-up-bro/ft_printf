@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:04:37 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/11 10:20:42 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:03:09 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 int	ft_print_c(char c)
 {
-	if (ft_putchar(c) == -1)
-		return (-1);
-	else
-		return (1);
+	return (ft_putchar(c));
 }

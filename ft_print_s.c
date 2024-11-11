@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:04:53 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/11 10:02:29 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/11 15:14:32 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,11 @@ int	ft_print_s(char *s)
 
 	i = 0;
 	if (s == NULL)
-	{
-		ft_print_s("(null)");
-		return (6);
-	}
+		return (ft_print_s("(null)"));
 	while (s[i])
 	{
-		ft_print_c(s[i]);
+		if (ft_print_c(s[i]) == -1)
+			return (-1);
 		i++;
 	}
 	return (i);
