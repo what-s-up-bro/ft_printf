@@ -6,22 +6,25 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:04:53 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/10 17:37:49 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/11 10:02:29 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_print_s(char *s)
 {
 	int	i;
 
 	i = 0;
-	if (!s)
-		return (0);
+	if (s == NULL)
+	{
+		ft_print_s("(null)");
+		return (6);
+	}
 	while (s[i])
 	{
-		write(1, &s[i], 1);
+		ft_print_c(s[i]);
 		i++;
 	}
 	return (i);

@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 08:55:11 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/10 18:47:49 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/11/10 20:10:09 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/11/11 09:26:50 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <stdarg.h>
+int	ft_print_hex(unsigned int nb)
+{
+	int		i;
+	char	*s;
 
-int		ft_print_c(char c);
-int		ft_print_s(char *s);
-int		ft_print_d_i(int nb);
-int		ft_print_u(unsigned int nb);
-int		ft_print_2(int nb);
-int		ft_print_x(int nb);
-int		ft_my_printf(const char *form, ...);
-int		ft_print_p(void *ptr);
-char	*ft_itoa(int n);
-
-#endif
+	i = 0;
+	s = "0123456789ABCDEF";
+	if (nb >= 16)
+		i += ft_print_hex(nb / 16);
+	i += ft_print_c(s[nb % 16]);
+	return (i);
+}

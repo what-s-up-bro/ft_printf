@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_my_printf.c                                     :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:53:38 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/10 18:48:45 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/10 20:00:01 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-static int	ft_make(char c, va_list args)
+int	ft_make(char c, va_list args)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ static int	ft_make(char c, va_list args)
 	else if (c == 'x')
 		i += ft_print_x(va_arg(args, unsigned int));
 	else if (c == 'X')
-		i += ft_print_2(va_arg(args, unsigned int));
+		i += ft_print_hex(va_arg(args, unsigned int));
 	else if (c == 'p')
 		i += ft_print_p(va_arg(args, void *));
 	else if (c == '%')
@@ -36,7 +36,7 @@ static int	ft_make(char c, va_list args)
 	return (i);
 }
 
-int	ft_my_printf(const char *form, ...)
+int	ft_printf(const char *form, ...)
 {
 	va_list	args;
 	int		i;

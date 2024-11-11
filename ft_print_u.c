@@ -6,11 +6,11 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:04:56 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/10 18:52:43 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/11 10:00:56 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_print_u(unsigned int nb)
 {
@@ -18,12 +18,12 @@ int	ft_print_u(unsigned int nb)
 	char	*str;
 
 	i = 0;
-	str = ft_itoa(nb);
+	str = ft_itoa1(nb);
 	if (str)
 	{
 		while (str[i])
 		{
-			write(1, &str[i], 1);
+			ft_print_c(str[i]);
 			i++;
 		}
 		free(str);

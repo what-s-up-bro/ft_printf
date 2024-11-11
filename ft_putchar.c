@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_X.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 11:42:45 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/10 18:53:28 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/11/11 09:58:53 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/11/11 10:19:29 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int	ft_print_2(int nb)
+int	ft_putchar(char c)
 {
-	int		i;
-	char	*s;
-
-	i = 0;
-	s = "0123456789ABCDEF";
-	if (nb >= 16)
-		i += ft_print_2(nb / 16);
-	i += ft_print_c(s[nb % 16]);
-	return (i);
+	return (write(1, &c, 1));
 }

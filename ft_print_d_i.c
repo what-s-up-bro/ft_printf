@@ -6,11 +6,11 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 10:04:41 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/10 18:51:51 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/11 10:03:26 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_print_d_i(int nb)
 {
@@ -23,7 +23,7 @@ int	ft_print_d_i(int nb)
 	{
 		while (str[i])
 		{
-			write(1, &str[i], 1);
+			ft_print_c(str[i]);
 			i++;
 		}
 		free(str);

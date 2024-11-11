@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/10 10:46:50 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/10 18:45:29 by yaait-am         ###   ########.fr       */
+/*   Created: 2024/11/11 08:58:06 by yaait-am          #+#    #+#             */
+/*   Updated: 2024/11/11 10:49:44 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static int	ft_count(long nb)
 {
@@ -41,13 +41,12 @@ char	*ft_itoa(int n)
 	yas = malloc ((i + 1) * sizeof(char));
 	if (!yas)
 		return (NULL);
-	yas[i] = '\0';
+	yas[i--] = '\0';
 	if (nb < 0)
 	{
 		yas[0] = '-';
 		nb = -nb;
 	}
-	i = i - 1;
 	if (nb == 0)
 		yas[i] = '0';
 	while (nb > 0)
