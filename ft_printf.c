@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:53:38 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/11 15:53:17 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/12 14:11:48 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,7 @@ int	ft_make(char c, va_list args)
 	else if (c == 'p')
 		i = ft_print_p(va_arg(args, void *));
 	else if (c == '%')
-		i = ft_print_c('%');
-	else
-		return (-1);
-	if (i == -1)
-		return (-1);
+		i = ft_print_c(c);
 	return (i);
 }
 
@@ -53,7 +49,7 @@ int	ft_printf(const char *form, ...)
 
 	ft_sity(a);
 	va_start(args, form);
-	if (write(1, 0, 0) == -1)
+	if (!form || write(1, 0, 0) == -1)
 		return (-1);
 	while (*form)
 	{
