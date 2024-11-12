@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 09:58:53 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/11 15:02:35 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/12 15:44:44 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,5 @@ int	ft_putchar(char c)
 	int	i;
 
 	i = write(1, &c, 1);
-	if (i == -1)
-		write(2, "failed\n", 7);
 	return (i);
 }

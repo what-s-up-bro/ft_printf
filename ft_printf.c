@@ -6,7 +6,7 @@
 /*   By: yaait-am <yaait-am@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 15:53:38 by yaait-am          #+#    #+#             */
-/*   Updated: 2024/11/12 14:11:48 by yaait-am         ###   ########.fr       */
+/*   Updated: 2024/11/12 15:42:11 by yaait-am         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_make(char c, va_list args)
 		i = ft_print_hex(va_arg(args, unsigned int));
 	else if (c == 'p')
 		i = ft_print_p(va_arg(args, void *));
-	else if (c == '%')
+	else
 		i = ft_print_c(c);
 	return (i);
 }
